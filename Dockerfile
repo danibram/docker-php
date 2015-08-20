@@ -41,6 +41,8 @@ WORKDIR /var/www/html
 
 VOLUME ["/var/www/html"]
 
+ONBUILD ADD . /var/www/html
+
 ADD launch.sh /launch
 
 EXPOSE 80
