@@ -39,7 +39,10 @@ RUN echo "extension=mongo.so" >> /etc/php5/apache2/php.ini
 
 WORKDIR /var/www/html
 
+RUN rm /var/www/html/index.html
+
 ONBUILD ADD . /var/www/html
+ONBUILD RUN chown -R www-data:www-data .
 
 ADD launch.sh /launch
 
