@@ -9,17 +9,8 @@ Based on xhttp build
 ### Development ###
 
     app:
-        image: xhttpdev/docker-php:dev
+        image: danibram/docker-php
         ports:
             - "80:80"
         volumes:
             - /var/www/myapp:/var/www/html
-
-### Production ###
-
-No Volume available
-
-    app:
-        image: xhttpdev/docker-php:latest
-        ports:
-            - "80:80"

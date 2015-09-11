@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 
 RUN apt-get -yqq update
-RUN DEBIAN_FRONTEND=noninteractive apt-get -yqq install apache2 libapache2-mod-php5 curl php5-curl php5-dev php5-intl git vim
+RUN DEBIAN_FRONTEND=noninteractive apt-get -yqq install apache2 libapache2-mod-php5 libapache2-mod-auth-mysql php5-mysql php5-sqlite curl php5-curl php5-dev git vim
 RUN apt-get autoclean
 
 # Enable apache mods.
@@ -27,6 +27,8 @@ ENV APACHE_LOCK_DIR /var/lock/apache2
 RUN mkdir -p $APACHE_RUN_DIR $APACHE_LOCK_DIR $APACHE_LOG_DIR
 
 WORKDIR /var/www/html
+
+VOLUME ["/var/www/html"]
 
 ADD launch.sh /launch
 
