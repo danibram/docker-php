@@ -30,8 +30,4 @@ WORKDIR /var/www/html
 
 VOLUME ["/var/www/html"]
 
-ADD launch.sh /launch
-
 EXPOSE 80
-
-CMD [ "/launch" ]
